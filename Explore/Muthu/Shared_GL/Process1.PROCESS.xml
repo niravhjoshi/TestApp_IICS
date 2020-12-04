@@ -1,0 +1,88 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>vjGnShsZvPP8KnB-gt-759424-2020-10-22T13:07:04.348Z::pd.xml</types1:EntryId>
+      <types1:Name>Process1-8</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>niravjoshi</types1:CreatedBy>
+      <types1:CreationDate>2020-10-22T13:07:04Z</types1:CreationDate>
+      <types1:ModifiedBy>niravjoshi</types1:ModifiedBy>
+      <types1:ModificationDate>2020-10-22T13:12:36Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="Process1"
+                  name="Process1-8"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <output>
+               <field description="" name="op_data" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </output>
+            <tempFields>
+               <field description="" name="tmp_faulInfo" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="none">
+               <rest/>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kgku9xhv" targetId="kgku9xhz"/>
+               </start>
+               <eventContainer id="kgku9xhz">
+                  <service id="kgku9xhu">
+                     <title>GetTFStatus</title>
+                     <serviceName>GetAllDataTFConnection:GetTFStatus</serviceName>
+                     <serviceGUID>3vu8a1qwqmXhmW76EDlusd</serviceGUID>
+                     <serviceInput/>
+                  </service>
+                  <flow id="kgku9xi1">
+                     <assignment id="kgku9xkp">
+                        <title>Hapy</title>
+                        <operation source="field" to="output.op_data">output.TF_DATA</operation>
+                     </assignment>
+                     <link id="kgku9xi2" targetId="kgku9xhz" type="containerLink"/>
+                  </flow>
+                  <flow id="kgku9xi4">
+                     <assignment id="kgku9xk2">
+                        <title>Assignment to tmp_faulInfo</title>
+                        <operation source="field" to="temp.tmp_faulInfo">output.TF_FaultInfo[1]/reason</operation>
+                     </assignment>
+                     <link id="kgku9xi5" targetId="kgku9xhz" type="containerLink"/>
+                  </flow>
+                  <link id="kgku9xi0" targetId="kgku9xi1" type="containerLink"/>
+                  <link id="kgku9xjc" targetId="c"/>
+                  <events>
+                     <catch faultField="TF_FaultInfo" id="kgku9xhy" interrupting="true">
+                        <link id="kgku9xi3" targetId="kgku9xi4" type="containerLink"/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>0H50gZFM5o5jTXqg1hvH0t</types1:GUID>
+      <types1:DisplayName>Process1</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2020-12-04T13:22:00.409Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

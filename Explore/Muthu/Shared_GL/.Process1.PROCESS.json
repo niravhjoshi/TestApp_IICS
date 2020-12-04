@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "0H50gZFM5o5jTXqg1hvH0t",
+    "name" : "Process1",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "vjGnShsZvPP8KnB-gt-759424-2020-10-22T13:07:04.348Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "3vu8a1qwqmXhmW76EDlusd",
+    "name" : "GetAllDataTFConnection",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "wmoTCOshBnJKoJB-gt-15816294-2020-09-16T04:47:01.363Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Infy/CAI_TF"
+  } ]
+}
