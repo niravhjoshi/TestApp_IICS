@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "1OSIDf0UBHShmxeOLeP3qH",
+    "name" : "Common",
+    "type" : "Folder",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Common / global nappings and tasks that are not specific to a single target data set ",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}
