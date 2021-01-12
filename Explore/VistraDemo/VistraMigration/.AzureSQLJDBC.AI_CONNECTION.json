@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "aMrNOYAfCyhclhyFzgGQAd",
+    "name" : "AzureSQLJDBC",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "3JHQjATO9pH8sVY-gt-17070657-2020-12-16T03:44:51.886Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "This App Connection is used to connect to SQL Server DB having the user controlled tables.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

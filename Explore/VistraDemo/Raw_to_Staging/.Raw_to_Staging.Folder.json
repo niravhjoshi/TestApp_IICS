@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "aqahPtrxQUFiWnerG6U9G3",
+    "name" : "Raw_to_Staging",
+    "type" : "Folder",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Copy data from raw files in Cloud Storage across to staging in Cloud SQL",
+        "contentType" : null,
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}

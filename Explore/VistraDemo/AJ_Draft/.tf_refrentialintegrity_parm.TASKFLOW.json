@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "9Svx7Bsrb9pjHWGqEejTWI",
+    "name" : "tf_refrentialintegrity_parm",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "hMBu8zbgdwUiQLn-gt-20096209-2020-12-16T09:08:41.276Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "0dAO3w7M7zYdtreeGmVQAV",
+    "name" : "Mct_RefIntCheck",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0101X40Z000000000078"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/VistraDemo/AJ_Draft"
+  } ]
+}

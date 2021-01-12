@@ -1,0 +1,189 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>hMBu8zbgdwUiQLn-gt-20096209-2020-12-16T09:08:41.276Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_refrentialintegrity_parm</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>aj</types1:CreatedBy>
+      <types1:CreationDate>2020-12-16T09:08:41Z</types1:CreationDate>
+      <types1:ModifiedBy>aj</types1:ModifiedBy>
+      <types1:ModificationDate>2020-12-16T09:25:33Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>aj</types1:PublishedBy>
+      <types1:PublicationDate>2020-12-16T09:25:41Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_refrentialintegrity_parm/tf_refrentialintegrity_parm.tf.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_refrentialintegrity_parm"
+                   name="tf_refrentialintegrity_parm"
+                   overrideAPIName="false">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description=""
+                          name="in_src_connection"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="in_src_table"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_lkp_connection" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="in_lkp_table" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="in_fields_to_check"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="in_input_exp"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="in_lkp_condition"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description=""
+                          name="in_tgt_table"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="RefIntCheck_parm" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:Mct-RefIntCheck</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedUsers>
+                     <user>aj</user>
+                  </allowedUsers>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kir6f17h" targetId="kir6f181"/>
+               </start>
+               <eventContainer id="kir6f181">
+                  <service id="kir6f17g">
+                     <title>RefIntCheck_parm</title>
+                     <serviceName>ICSExecuteDataTask</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">Mct_RefIntCheck</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">0dAO3w7M7zYdtreeGmVQAV</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                        <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="Mct-RefIntCheck">temp.RefIntCheck_parm</operation>
+                           <operation source="formula"
+                                      to="Mct-RefIntCheck/input[1]/source[1]/SrcData[1]/connection">
+                              <expression language="XQuery">$input.in_src_connection </expression>
+                           </operation>
+                           <operation source="field"
+                                      to="Mct-RefIntCheck/input[1]/source[1]/SrcData[1]/object">input.in_src_table</operation>
+                           <operation source="field" to="Mct-RefIntCheck/input[1]/p_fields_to_check">input.in_fields_to_check</operation>
+                           <operation source="field" to="Mct-RefIntCheck/input[1]/Par_Exp_Valu">input.in_input_exp</operation>
+                           <operation source="field" to="Mct-RefIntCheck/input[1]/Param_Lkp_Condition">input.in_lkp_condition</operation>
+                           <operation source="field"
+                                      to="Mct-RefIntCheck/input[1]/target[1]/TgtNewTab[1]/object">input.in_tgt_table</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.RefIntCheck_parm/output/Object_Name">Object Name</operation>
+                        <operation source="field" to="temp.RefIntCheck_parm/output/Run_Id">Run Id</operation>
+                        <operation source="field" to="temp.RefIntCheck_parm/output/Log_Id">Log Id</operation>
+                        <operation source="field" to="temp.RefIntCheck_parm/output/Task_Id">Task Id</operation>
+                        <operation source="field" to="temp.RefIntCheck_parm/output/Task_Status">Task Status</operation>
+                        <operation source="field" to="temp.RefIntCheck_parm/output/Success_Source_Rows">Success Source Rows</operation>
+                        <operation source="field" to="temp.RefIntCheck_parm/output/Failed_Source_Rows">Failed Source Rows</operation>
+                        <operation source="field" to="temp.RefIntCheck_parm/output/Success_Target_Rows">Success Target Rows</operation>
+                        <operation source="field" to="temp.RefIntCheck_parm/output/Failed_Target_Rows">Failed Target Rows</operation>
+                        <operation source="field" to="temp.RefIntCheck_parm/output/Start_Time">Start Time</operation>
+                        <operation source="field" to="temp.RefIntCheck_parm/output/End_Time">End Time</operation>
+                        <operation source="field" to="temp.RefIntCheck_parm/output/Error_Message">Error Message</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="kir6f17i" targetId="c"/>
+                  <events>
+                     <catch faultField="temp.RefIntCheck_parm/fault"
+                            id="kir6f17z"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                     <catch faultField="temp.RefIntCheck_parm/fault"
+                            id="kir6f180"
+                            interrupting="true"
+                            name="warning"/>
+                  </events>
+               </eventContainer>
+               <end id="c"/>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="Mct-RefIntCheck"
+                              isByCopy="true"
+                              name="Mct-RefIntCheck">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Input Parameters" name="input" type="reference"/>
+                     <field label="Output Parameters" name="output" type="reference"/>
+                     <field label="Fault" name="fault" type="reference"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>9Svx7Bsrb9pjHWGqEejTWI</types1:GUID>
+      <types1:DisplayName>tf_refrentialintegrity_parm</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-01-12T09:13:12.151Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

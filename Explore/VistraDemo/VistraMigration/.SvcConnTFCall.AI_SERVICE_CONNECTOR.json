@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "4mbY1VHOpxccBdemF2NISw",
+    "name" : "SvcConnTFCall",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "mUHO1qhPVEQrXhN-gt-20084859-2020-12-17T17:07:28.193Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Service Connector created to call the subsequent DQ Taskflows exposed as a service",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

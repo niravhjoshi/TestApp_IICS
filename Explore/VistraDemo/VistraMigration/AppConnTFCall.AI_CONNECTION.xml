@@ -1,0 +1,49 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>abbf5ZK0CYybdsM-gt-20115878-2020-12-17T17:31:32.013Z::conn.xml</types1:EntryId>
+      <types1:Name>AppConnTFCall</types1:Name>
+      <types1:ParentFlowIds>yuRZXDyvs7xvk0q-gt-9297316-2020-12-17T03:56:49.391Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description>App Connection created as a wrapper to call the underlying service connector.</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:invrl7ips02.informatica.com</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>aj</types1:CreatedBy>
+      <types1:CreationDate>2020-12-17T17:31:32Z</types1:CreationDate>
+      <types1:ModifiedBy>aj</types1:ModifiedBy>
+      <types1:ModificationDate>2021-01-04T13:52:27Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>aj</types1:PublishedBy>
+      <types1:PublicationDate>2021-01-08T10:23:56Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/AppConnTFCall/AppConnTFCall.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="AppConnTFCall"
+                     label="AppConnTFCall"
+                     name="AppConnTFCall">
+            <description>App Connection created as a wrapper to call the underlying service connector.</description>
+            <tags>.agent:invrl7ips02.informatica.com</tags>
+            <agent>invrl7ips02.informatica.com</agent>
+            <attributes>
+               <attribute encrypted="false" name="username" value="aj"/>
+               <attribute encrypted="true" name="password" value=""/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/SvcConnTFCall/SvcConnTFCall_svcDef.xml"
+                               name="SvcConnTFCall"
+                               supportsConnectionTest="false"
+                               uuid="6ce68bc2-a634-444a-b31e-2a791f6d909d">
+               <description>Service Connector created to call the subsequent DQ Taskflows exposed as a service</description>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>8NmQDRJond3hDl0bN3xkAX</types1:GUID>
+      <types1:DisplayName>AppConnTFCall</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-01-12T09:12:57.31Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

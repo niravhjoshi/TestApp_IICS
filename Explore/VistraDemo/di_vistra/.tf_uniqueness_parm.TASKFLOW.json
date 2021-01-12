@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "aZaIDeRaCmSlpo2FK4uvCL",
+    "name" : "tf_uniqueness_parm",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "eMVX3cjk91pqrzY-gt-18702741-2020-12-15T12:40:18.078Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Taskflow exposed as a service for the Uniqueness DQ rule.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "3xAMzAjBZoZc19UotykEKM",
+    "name" : "mt_uniqueness_parm",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0101X40Z000000000077"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Mapping task created as a wrapper of Uniqueness mapping. The parameters specified here are sample parameters which is later overwritten within the taskfkows.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/VistraDemo/di_vistra"
+  } ]
+}

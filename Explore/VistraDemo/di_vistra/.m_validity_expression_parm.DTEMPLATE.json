@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "6IVaVOiAVu2e3ddPA4wpKp",
+    "name" : "m_validity_expression_parm",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0101X417000000000090"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "This mapping is to perform the validity quality check on individual fields or multple fields - depending on the validity expression passed.\nIn case a value on a source table is not conforming the validity expression, it will be flagged as Invalid.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "0Y0aoL0wMO1dkrcsXVp6UP",
+    "name" : "SQLAzureConnIPS_SQLSRV",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0101X40B00000000005S"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ]
+}

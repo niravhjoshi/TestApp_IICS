@@ -1,0 +1,274 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>bdvhxiQLnzYLnzY-gt-46866925-2020-12-21T13:43:19.02Z::svc.xml</types1:EntryId>
+      <types1:Name>SvcConnTFCall_bkp</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>aj</types1:CreatedBy>
+      <types1:CreationDate>2020-12-21T13:43:19Z</types1:CreationDate>
+      <types1:ModifiedBy>aj</types1:ModifiedBy>
+      <types1:ModificationDate>2020-12-21T13:44:06Z</types1:ModificationDate>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="SvcConnTFCall_bkp"
+                            label=""
+                            name="SvcConnTFCall_bkp"
+                            uuid="6ce68bc2-a634-444a-b31e-2a791f6d909d">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description="User Name"
+                                    masked="false"
+                                    name="username"
+                                    required="true"
+                                    testWith="aj"
+                                    type="string"/>
+               <connectionAttribute description="Password"
+                                    masked="true"
+                                    name="password"
+                                    required="true"
+                                    testWith=""
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="tf_completeness_parmOperation"
+                       maxRedirects="100"
+                       name="tf_completeness_parmOperation"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="tf_name"
+                                required="true"
+                                testWith="tf_completeness_parm"
+                                type="string"/>
+                     <parameter name="in_src_connection"
+                                required="true"
+                                testWith="0101X40B00000000005S"
+                                type="string"/>
+                     <parameter name="in_src_table"
+                                required="true"
+                                testWith="ADDRESS"
+                                type="string"/>
+                     <parameter name="in_fields_to_check"
+                                required="true"
+                                testWith="(?:(?:^|, )(AddressLine1|PostalCode|City))+$"
+                                type="string"/>
+                     <parameter name="in_tgt_table"
+                                required="true"
+                                testWith="AddressCompleteness3518"
+                                type="string"/>
+                     <parameter name="in_src_country"
+                                required="true"
+                                testWith="Singapore"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://na1.dm-us.informaticacloud.com/active-bpel/rt/{$tf_name}"
+                                        verb="POST">
+                        <authentication>
+                           <username>{$username}</username>
+                           <password>{$password}</password>
+                           <isExpressionInPassword>true</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                        </httpHeaders>
+                        <body>{{
+    "in_src_connection": "{$in_src_connection}",
+    "in_src_table": "{$in_src_table}",
+    "in_fields_to_check": "{$in_fields_to_check}",
+    "in_tgt_table": "{$in_tgt_table}",
+    "in_src_country": "{$in_src_country}"
+}}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="op_tf_id"
+                            type="string"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="tf_uniqueness_parmOperation"
+                       maxRedirects="100"
+                       name="tf_uniqueness_parmOperation"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="tf_name"
+                                required="true"
+                                testWith="tf_uniqueness_parm"
+                                type="string"/>
+                     <parameter name="in_src_connection"
+                                required="true"
+                                testWith="0101X40B000000000056"
+                                type="string"/>
+                     <parameter name="in_src_table" required="true" testWith="" type="string"/>
+                     <parameter name="in_fields_to_check"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter name="in_tgt_table" required="true" testWith="" type="string"/>
+                     <parameter name="in_input_exp" required="false" testWith="" type="string"/>
+                     <parameter name="in_src_country"
+                                required="true"
+                                testWith="Singapore"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://na1.dm-us.informaticacloud.com/active-bpel/rt/{$tf_name}"
+                                        verb="POST">
+                        <authentication>
+                           <username>{$username}</username>
+                           <password>{$password}</password>
+                           <isExpressionInPassword>true</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                        </httpHeaders>
+                        <body>{{
+    "in_src_connection": "{$in_src_connection}",
+    "in_src_table": "{$in_src_table}",
+    "in_fields_to_check": "{$in_fields_to_check}",
+    "in_tgt_table": "{$in_tgt_table}",
+    "in_input_exp": "{$in_input_exp}",
+    "in_src_country": "{$in_src_country}"
+}}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="op_tf_id"
+                            type="string"/>
+                  </output>
+               </action>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="tf_validity_expression_parmOperation"
+                       maxRedirects="100"
+                       name="tf_validity_expression_parmOperation"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter name="tf_name"
+                                required="true"
+                                testWith="tf_validity_exp_parm"
+                                type="string"/>
+                     <parameter name="in_src_connection"
+                                required="true"
+                                testWith="0101X40B000000000056"
+                                type="string"/>
+                     <parameter name="in_src_table" required="true" testWith="" type="string"/>
+                     <parameter name="in_fields_to_check"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter name="in_tgt_table" required="true" testWith="" type="string"/>
+                     <parameter name="in_input_exp" required="true" testWith="" type="string"/>
+                     <parameter name="in_src_country" required="true" testWith="" type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://na1.dm-us.informaticacloud.com/active-bpel/rt/{$tf_name}"
+                                        verb="POST">
+                        <authentication>
+                           <username>{$username}</username>
+                           <password>{$password}</password>
+                           <isExpressionInPassword>true</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                        </httpHeaders>
+                        <body>{{
+    "in_src_connection": "{$in_src_connection}",
+    "in_src_table": "{$in_src_table}",
+    "in_fields_to_check": "{$in_fields_to_check}",
+    "in_tgt_table": "{$in_tgt_table}",
+    "in_input_exp": "{$in_input_exp}",
+    "in_src_country": "{$in_src_country}"
+}}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="op_tf_id"
+                            type="string"/>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="tf_completeness_parmRequest">
+                  <description/>
+                  <detail>
+                     <field name="in_fields_to_check" type="string"/>
+                     <field name="in_src_table" type="string"/>
+                     <field name="in_src_connection" type="string"/>
+                     <field name="in_tgt_table" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="string">
+                  <description/>
+                  <detail>
+                     <field name="string" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="boolean">
+                  <description/>
+                  <detail>
+                     <field name="boolean" type="boolean"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="double">
+                  <description/>
+                  <detail>
+                     <field name="double" type="double"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="integer">
+                  <description/>
+                  <detail>
+                     <field name="integer" type="int"/>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>0MSDHBPoZyMluQycS9mbU8</types1:GUID>
+      <types1:DisplayName>SvcConnTFCall_bkp</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-01-12T09:12:57.274Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

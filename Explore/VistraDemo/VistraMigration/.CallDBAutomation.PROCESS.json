@@ -1,0 +1,84 @@
+{
+  "objectInfo" : {
+    "id" : "1WaB6LDvIwAetSaj420FmT",
+    "name" : "CallDBAutomation",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "yuRZXDyvs7xvk0q-gt-9297316-2020-12-17T03:56:49.391Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "The Process is to automate the service call made to DQ Taskflow by making use of user controlled tables located in SQL Server DB.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "aMrNOYAfCyhclhyFzgGQAd",
+    "name" : "AzureSQLJDBC",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "3JHQjATO9pH8sVY-gt-17070657-2020-12-16T03:44:51.886Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "This App Connection is used to connect to SQL Server DB having the user controlled tables.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/VistraDemo/VistraMigration"
+  }, {
+    "id" : "8NmQDRJond3hDl0bN3xkAX",
+    "name" : "AppConnTFCall",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "abbf5ZK0CYybdsM-gt-20115878-2020-12-17T17:31:32.013Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "App Connection created as a wrapper to call the underlying service connector.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/VistraDemo/VistraMigration"
+  }, {
+    "id" : "eofgjQLwGG1imidRsnkzyz",
+    "name" : "POTFIP",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "A15yDQeH2PKDC0h-gt-19167795-2020-12-17T04:46:09.422Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "This Process Object is to create the payload for Taskflow",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/VistraDemo/VistraMigration"
+  } ]
+}

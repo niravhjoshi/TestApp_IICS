@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "eofgjQLwGG1imidRsnkzyz",
+    "name" : "POTFIP",
+    "type" : "PROCESS_OBJECT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "A15yDQeH2PKDC0h-gt-19167795-2020-12-17T04:46:09.422Z::po.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "This Process Object is to create the payload for Taskflow",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

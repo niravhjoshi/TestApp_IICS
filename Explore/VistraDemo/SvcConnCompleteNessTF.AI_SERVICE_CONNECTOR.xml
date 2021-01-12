@@ -1,0 +1,142 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>KKWTzIf6riX2FNB-gt-19648749-2020-12-17T12:59:58.596Z::svc.xml</types1:EntryId>
+      <types1:Name>SvcConnCompleteNessTF</types1:Name>
+      <types1:ParentFlowIds>cnFKi9zhFtybdua-gt-39539760-2020-12-17T15:13:55.046Z::conn.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>niravjoshi</types1:CreatedBy>
+      <types1:CreationDate>2020-12-17T12:59:59Z</types1:CreationDate>
+      <types1:ModifiedBy>niravjoshi</types1:ModifiedBy>
+      <types1:ModificationDate>2020-12-17T15:12:04Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>niravjoshi</types1:PublishedBy>
+      <types1:PublicationDate>2020-12-17T15:12:54Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/SvcConnCompleteNessTF/SvcConnCompleteNessTF_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="SvcConnCompleteNessTF"
+                            label=""
+                            name="SvcConnCompleteNessTF"
+                            uuid="6ce68bc2-a634-444a-b31e-2a791f6d909d">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description="User Name"
+                                    masked="false"
+                                    name="username"
+                                    required="true"
+                                    testWith="niravjoshi"
+                                    type="string"/>
+               <connectionAttribute description="Password"
+                                    masked="false"
+                                    name="password"
+                                    required="true"
+                                    testWith="Infa@2211"
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category=""
+                       failOnError="true"
+                       forSearch="false"
+                       label="tf_completeness_parmOperation"
+                       maxRedirects="100"
+                       name="tf_completeness_parmOperation"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter label="body"
+                                name="body"
+                                required="true"
+                                testWith="{ &#34;in_src_connection&#34;:&#34;0101X40B000000000056&#34;, &#34;in_src_table&#34;:&#34;ADDRESS&#34;, &#34;in_fields_to_check&#34;:&#34;Address_Line1|PostalCode|Country&#34;, &#34;in_tgt_table&#34;:&#34;AddressCompleteness3518&#34; }"
+                                type="string"/>
+                     <parameter name="tf_name"
+                                required="true"
+                                testWith="tf_completeness_parm"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://na1.dm-us.informaticacloud.com/active-bpel/rt/{$tf_name}"
+                                        verb="POST">
+                        <authentication>
+                           <username>{$username}</username>
+                           <password>{$password}</password>
+                           <isExpressionInPassword>true</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                        </httpHeaders>
+                        <body>{$body}</body>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            entireResponse="true"
+                            name="op_tf_id"
+                            type="string"/>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="tf_completeness_parmRequest">
+                  <description/>
+                  <detail>
+                     <field name="in_fields_to_check" type="string"/>
+                     <field name="in_src_table" type="string"/>
+                     <field name="in_src_connection" type="string"/>
+                     <field name="in_tgt_table" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="string">
+                  <description/>
+                  <detail>
+                     <field name="string" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="boolean">
+                  <description/>
+                  <detail>
+                     <field name="boolean" type="boolean"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="double">
+                  <description/>
+                  <detail>
+                     <field name="double" type="double"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="integer">
+                  <description/>
+                  <detail>
+                     <field name="integer" type="int"/>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>fW4BDlRJAyziYjIJYdsSaN</types1:GUID>
+      <types1:DisplayName>SvcConnCompleteNessTF</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-01-12T09:12:57.062Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

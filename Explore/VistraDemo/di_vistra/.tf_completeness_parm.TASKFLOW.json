@@ -1,0 +1,70 @@
+{
+  "objectInfo" : {
+    "id" : "1VBBoIBuMrSczIK77wNB4L",
+    "name" : "tf_completeness_parm",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "abbgdoGsF4Xkgbd-gt-18702718-2020-12-15T12:40:18.013Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "Taskflow exposed as a service for the Completeness DQ rule.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "9ggqzYYrYEhkloRUgLzpIp",
+    "name" : "mt_normalize_dq_results",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0101X40Z00000000007F"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Mapping task created as a wrapper of Normalize Results mapping. The parameters specified here are sample parameters which is later overwritten within the taskfkows.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/VistraDemo/di_vistra"
+  }, {
+    "id" : "fAM2ENn7wkmdhk0ZXUjyUg",
+    "name" : "mt_completeness_parm",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "0101X40Z000000000075"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Mapping task created as a wrapper of Completeness mapping. The parameters specified here are sample parameters which is later overwritten within the taskfkows.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/VistraDemo/di_vistra"
+  } ]
+}

@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "6ropE90uH6WgtUaXycxL6q",
+    "name" : "RulePetertoDemo",
+    "type" : "RULE_SPECIFICATION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "6ropE90uH6WgtUaXycxL6q"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : null,
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}

@@ -1,0 +1,49 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>cnFKi9zhFtybdua-gt-39539760-2020-12-17T15:13:55.046Z::conn.xml</types1:EntryId>
+      <types1:Name>AppConTFCall</types1:Name>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>niravjoshi</types1:CreatedBy>
+      <types1:CreationDate>2020-12-17T15:13:55Z</types1:CreationDate>
+      <types1:ModifiedBy>aj</types1:ModifiedBy>
+      <types1:ModificationDate>2020-12-17T17:38:13Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>aj</types1:PublishedBy>
+      <types1:PublicationDate>2020-12-17T17:38:35Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/AppConTFCall/AppConTFCall.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="AppConTFCall"
+                     label="AppConTFCall"
+                     name="AppConTFCall">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes>
+               <attribute encrypted="false" name="username" value="niravhjoshi"/>
+               <attribute encrypted="false" name="password" value="Infa@2211"/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/SvcConnCompleteNessTF/SvcConnCompleteNessTF_svcDef.xml"
+                               guid="fW4BDlRJAyziYjIJYdsSaN"
+                               name="SvcConnCompleteNessTF"
+                               supportsConnectionTest="false"
+                               uuid="6ce68bc2-a634-444a-b31e-2a791f6d909d">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>777VTogx8z1ltcROPDeCed</types1:GUID>
+      <types1:DisplayName>AppConTFCall</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-01-12T09:12:57.299Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

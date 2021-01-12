@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "8NmQDRJond3hDl0bN3xkAX",
+    "name" : "AppConnTFCall",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "abbf5ZK0CYybdsM-gt-20115878-2020-12-17T17:31:32.013Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "App Connection created as a wrapper to call the underlying service connector.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

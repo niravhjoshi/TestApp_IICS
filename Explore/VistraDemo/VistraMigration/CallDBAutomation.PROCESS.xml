@@ -1,0 +1,225 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>yuRZXDyvs7xvk0q-gt-9297316-2020-12-17T03:56:49.391Z::pd.xml</types1:EntryId>
+      <types1:Name>CallDBAutomation</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>The Process is to automate the service call made to DQ Taskflow by making use of user controlled tables located in SQL Server DB.</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.agent:invrl7ips02.informatica.com,.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>niravjoshi</types1:CreatedBy>
+      <types1:CreationDate>2020-12-17T03:56:49Z</types1:CreationDate>
+      <types1:ModifiedBy>aj</types1:ModifiedBy>
+      <types1:ModificationDate>2021-01-08T10:31:02Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>aj</types1:PublishedBy>
+      <types1:PublicationDate>2021-01-08T10:31:16Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.CallDBAutomation/CallDBAutomation.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="CallDBAutomation"
+                  name="CallDBAutomation"
+                  overrideAPIName="false">
+            <appliesTo/>
+            <description>The Process is to automate the service call made to DQ Taskflow by making use of user controlled tables located in SQL Server DB.</description>
+            <tags>.agent:invrl7ips02.informatica.com,.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="Ip_InstanceRuleId" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="" name="Tmp_Source_Dataset" type="reference">
+                  <options>
+                     <option name="referenceTo">AzureSQLJDBC:Source_Dataset</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">aMrNOYAfCyhclhyFzgGQAd</option>
+                  </options>
+               </field>
+               <field description="" name="Tmp_Parameter_Values" type="objectlist">
+                  <options>
+                     <option name="referenceTo">AzureSQLJDBC:Parameter_Values</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">aMrNOYAfCyhclhyFzgGQAd</option>
+                  </options>
+               </field>
+               <field description="" name="Tmp_Rule_Process_IICS" type="reference">
+                  <options>
+                     <option name="referenceTo">AzureSQLJDBC:Rule_Process_IICS</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">aMrNOYAfCyhclhyFzgGQAd</option>
+                  </options>
+               </field>
+               <field description="" name="Tmp_Instance_Rule" type="reference">
+                  <options>
+                     <option name="referenceTo">AzureSQLJDBC:Instance_Rule</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">aMrNOYAfCyhclhyFzgGQAd</option>
+                  </options>
+               </field>
+               <field description="" name="Tmp_Rows_list" type="objectlist">
+                  <options>
+                     <option name="referenceTo">$po:$any</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                  </options>
+               </field>
+               <field description="" name="Tmp_TF_Po_list" type="objectlist">
+                  <options>
+                     <option name="referenceTo">$po:POTFIP</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">eofgjQLwGG1imidRsnkzyz</option>
+                  </options>
+               </field>
+               <field description="" name="Tmp_TF_Po_record" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:POTFIP</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">eofgjQLwGG1imidRsnkzyz</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <targetLocation>invrl7ips02.informatica.com</targetLocation>
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="kisba4x6" targetId="kisba4x5"/>
+               </start>
+               <assignment id="kisba4x5">
+                  <title>Query_Instance_Rule</title>
+                  <operation source="query" to="temp.Tmp_Instance_Rule">
+                     <query advanceQuery="false" from="AzureSQLJDBC:Instance_Rule">
+                        <where>Instance_Rule_Id = '{$input.Ip_InstanceRuleId}'</where>
+                     </query>
+                  </operation>
+                  <link id="kisd40d2" targetId="kisd40ao"/>
+               </assignment>
+               <assignment id="kisd40ao">
+                  <title>QueryRule_Process_IICS</title>
+                  <operation source="query" to="temp.Tmp_Rule_Process_IICS">
+                     <query advanceQuery="false" from="AzureSQLJDBC:Rule_Process_IICS">
+                        <where>Rule_Process_IICS_Id = {$temp.Tmp_Instance_Rule[1]/Rule_Process_IICS_Id }</where>
+                     </query>
+                  </operation>
+                  <link id="kisd40aw" targetId="kisd40av"/>
+               </assignment>
+               <assignment id="kisd40av">
+                  <title>Query_Parameter_Values</title>
+                  <operation source="list" to="temp.Tmp_Parameter_Values">
+                     <query advanceQuery="false" from="AzureSQLJDBC:Parameter_Values">
+                        <where>Instance_Rule_Id = {$temp.Tmp_Instance_Rule[1]/Instance_Rule_Id }</where>
+                     </query>
+                  </operation>
+                  <link id="kisd40b1" targetId="kisd40b0"/>
+               </assignment>
+               <assignment id="kisd40b0">
+                  <title>Query_Source_Dataset</title>
+                  <operation source="query" to="temp.Tmp_Source_Dataset">
+                     <query advanceQuery="false" from="AzureSQLJDBC:Source_Dataset">
+                        <where>Source_Dataset_Id = {$temp.Tmp_Instance_Rule[1]/Source_Dataset_Id }</where>
+                     </query>
+                  </operation>
+                  <link id="kisd40b6" targetId="kisd40b5"/>
+               </assignment>
+               <assignment id="kisd40b5">
+                  <title>CreateFinalPOPyaload</title>
+                  <operation source="formula" to="temp.Tmp_Rows_list">
+                     <expression language="XQuery">$temp.Tmp_Parameter_Values </expression>
+                  </operation>
+                  <operation source="formula" to="temp.Tmp_TF_Po_record">
+                     <expression language="XQuery">&lt;POTFIP&gt;
+   &lt;in_tmp_table&gt;{concat($temp.Tmp_Parameter_Values[2]/Param_Value ,util:getProcessId())}&lt;/in_tmp_table&gt;
+   &lt;in_src_connection&gt;{$temp.Tmp_Source_Dataset[1]/IICS_Connection_Id/text() }&lt;/in_src_connection&gt;
+   &lt;in_src_table&gt;{$temp.Tmp_Source_Dataset[1]/Dataset_Name/text() }&lt;/in_src_table&gt;
+   &lt;in_fields_to_check&gt;(?:(?:^|, )({$temp.Tmp_Parameter_Values[1]/Param_Value }))+$&lt;/in_fields_to_check&gt;
+   &lt;in_input_exp&gt;{$temp.Tmp_Rule_Process_IICS[1]/Rule_Exp/text() }&lt;/in_input_exp&gt;
+   &lt;in_src_country&gt;{$temp.Tmp_Source_Dataset[1]/Country/text() }&lt;/in_src_country&gt;
+   &lt;in_src_key_fields&gt;(?:(?:^|, )({$temp.Tmp_Source_Dataset[1]/Source_Keys/text() }))+$&lt;/in_src_key_fields&gt;
+   &lt;in_tgt_invalid_tablekeys&gt;{$temp.Tmp_Parameter_Values[3]/Param_Value }&lt;/in_tgt_invalid_tablekeys&gt;
+   &lt;in_tgt_valid_tablekeys&gt;{$temp.Tmp_Parameter_Values[4]/Param_Value }&lt;/in_tgt_valid_tablekeys&gt;
+   &lt;in_IICS_Process&gt;{$temp.Tmp_Rule_Process_IICS[1]/IICS_Process/text()}&lt;/in_IICS_Process&gt;
+   &lt;in_instance_rule_id&gt;{$temp.Tmp_Instance_Rule[1]/Instance_Rule_Id/text()}&lt;/in_instance_rule_id&gt;
+   &lt;in_ref_connection&gt;{$temp.Tmp_Parameter_Values[5]/Param_Value }&lt;/in_ref_connection&gt;
+   &lt;in_ref_table&gt;{$temp.Tmp_Parameter_Values[6]/Param_Value }&lt;/in_ref_table&gt;
+   &lt;in_ref_fields&gt;(?:(?:^|, )({$temp.Tmp_Parameter_Values[7]/Param_Value }))+$&lt;/in_ref_fields&gt;
+&lt;/POTFIP&gt;</expression>
+                  </operation>
+                  <link id="kiym9vn2" targetId="kiym9vn1"/>
+               </assignment>
+               <service id="kiym9vn1">
+                  <title>Call DQ Rule tf</title>
+                  <serviceName>AppConnTFCall:tf_DQRule_parmOperation</serviceName>
+                  <serviceGUID>8NmQDRJond3hDl0bN3xkAX</serviceGUID>
+                  <serviceInput>
+                     <parameter name="tf_name" source="field" updatable="true">temp.Tmp_TF_Po_record[1]/in_IICS_Process</parameter>
+                     <parameter name="in_src_connection" source="field" updatable="true">temp.Tmp_TF_Po_record[1]/in_src_connection</parameter>
+                     <parameter name="in_src_table" source="field" updatable="true">temp.Tmp_TF_Po_record[1]/in_src_table</parameter>
+                     <parameter name="in_fields_to_check" source="field" updatable="true">temp.Tmp_TF_Po_record[1]/in_fields_to_check</parameter>
+                     <parameter name="in_tmp_table" source="field" updatable="true">temp.Tmp_TF_Po_record[1]/in_tmp_table</parameter>
+                     <parameter name="in_src_country" source="field" updatable="true">temp.Tmp_TF_Po_record[1]/in_src_country</parameter>
+                     <parameter name="in_input_exp" source="field" updatable="true">temp.Tmp_TF_Po_record[1]/in_input_exp</parameter>
+                     <parameter name="in_src_key_fields" source="field" updatable="true">temp.Tmp_TF_Po_record[1]/in_src_key_fields</parameter>
+                     <parameter name="in_tgt_invalid_tablekeys" source="field" updatable="true">temp.Tmp_TF_Po_record[1]/in_tgt_invalid_tablekeys</parameter>
+                     <parameter name="in_tgt_valid_tablekeys" source="field" updatable="true">temp.Tmp_TF_Po_record[1]/in_tgt_valid_tablekeys</parameter>
+                     <parameter name="in_instance_rule_id" source="field" updatable="true">temp.Tmp_TF_Po_record[1]/in_instance_rule_id</parameter>
+                     <parameter name="in_ref_connection" source="field" updatable="true">temp.Tmp_TF_Po_record[1]/in_ref_connection</parameter>
+                     <parameter name="in_ref_table" source="field" updatable="true">temp.Tmp_TF_Po_record[1]/in_ref_table</parameter>
+                     <parameter name="in_ref_fields" source="field" updatable="true">temp.Tmp_TF_Po_record[1]/in_ref_fields</parameter>
+                  </serviceInput>
+                  <link id="kiym9vn3" targetId="c"/>
+               </service>
+               <end id="c"/>
+            </flow>
+         </process>
+         <ns1:sample-data-sets xmlns:ns1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/sampleData.xsd">
+            <ns1:SampleData>
+               <ns1:Id>decfcea0-bfac-4e50-b956-3ae369be6c69</ns1:Id>
+               <ns1:Name>Test Instance Rule ID</ns1:Name>
+               <ns1:CreatedBy>aj</ns1:CreatedBy>
+               <ns1:CreationDate>2021-01-04T14:30:07Z</ns1:CreationDate>
+               <ns1:ModifiedBy>aj</ns1:ModifiedBy>
+               <ns1:ModifiedDate>2021-01-08T10:58:08Z</ns1:ModifiedDate>
+               <ns1:Data format="json">{
+	 "Ip_InstanceRuleId": "3"
+}</ns1:Data>
+            </ns1:SampleData>
+            <ns1:SampleData>
+               <ns1:Id>de21caeb-9c78-4f6a-ba35-cee828de887a</ns1:Id>
+               <ns1:Name>TEst1CompleteNessCheck</ns1:Name>
+               <ns1:CreatedBy>niravjoshi</ns1:CreatedBy>
+               <ns1:CreationDate>2020-12-17T05:00:06Z</ns1:CreationDate>
+               <ns1:ModifiedBy>aj</ns1:ModifiedBy>
+               <ns1:ModifiedDate>2020-12-23T11:27:42Z</ns1:ModifiedDate>
+               <ns1:Data format="json">{
+	 "Ip_RuletoCheck": "Completeness on Address dataset, on columns address_line1,  postal code and country"
+}</ns1:Data>
+            </ns1:SampleData>
+         </ns1:sample-data-sets>
+      </types1:Entry>
+      <types1:GUID>1WaB6LDvIwAetSaj420FmT</types1:GUID>
+      <types1:DisplayName>CallDBAutomation</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2021-01-12T09:12:59.486Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
